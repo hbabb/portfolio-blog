@@ -1,0 +1,72 @@
+---
+const {
+  type = 'button', // 'button', 'submit', 'link'
+  variant = 'primary',
+  href = '', // used if type === 'link'
+  class: extraClass = '', // optional per-instance styling
+  onclick = null, // optional JavaScript handler
+} = Astro.props;
+
+const isLink = type === 'link';
+---
+
+{
+  isLink ? (
+    <a class={`btn btn--${variant} ${extraClass}`} href={href}>
+      <slot />
+    </a>
+  ) : (
+    <button
+      type={type === 'submit' ? 'submit' : 'button'}
+      class={`btn btn--${variant} ${extraClass}`}
+      {...(onclick ? { onclick } : {})}
+    >
+      <slot />
+    </button>
+  )
+}
+
+<style lang="scss">
+  @use '@styles/_mixins' as *;
+
+  .btn {
+    @include button-u;
+
+    display: inline-flex;
+    align-items: center;
+    gap: rem(16);
+    padding: rem(16) rem(32);
+    border: none;
+    border-radius: var(--rounded-full);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .btn--primary {
+    background: var(--clr-brand-1);
+    color: var(--clr-background-1);
+
+    &:hover {
+      background: var(--clr-brand-2);
+    }
+  }
+
+  .btn--secondary {
+    background: var(--clr-white);
+    color: var(--clr-background-1);
+
+    &:hover {
+      background: var(--clr-brand-2);
+    }
+  }
+
+  .btn--outline {
+    background: transparent;
+    color: var(--clr-brand-1);
+    border: 2px solid var(--clr-brand-1);
+
+    &:hover {
+      border: 3px solid var(--clr-brand-2);
+    }
+  }
+</style>
