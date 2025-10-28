@@ -1,0 +1,200 @@
+/* ubuntu-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  src: url('/fonts/ubuntu-v21-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* ubuntu-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/ubuntu-v21-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* ubuntu-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/ubuntu-v21-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* ibm-plex-mono-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/ibm-plex-mono-v20-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* ibm-plex-mono-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/ibm-plex-mono-v20-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* 01 Colors */
+// Primary
+$clr-background-1: #292f36;
+$clr-background-2: #1a1e23;
+$clr-brand-1: #12f7d6;
+$clr-brand-2: #98faec;
+$clr-grey: #43454d;
+$clr-white: #ffffff;
+$clr-html: #e54f26;
+$clr-css: #0c73b8;
+$clr-js: #e7a020;
+$clr-react: #28a9e0;
+
+// Font weight
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+
+// Font family
+$ff-ubuntu: 'Ubuntu', Arial, Helvetica, sans-serif;
+$ff-ibm: 'IBM Plex Mono', 'Courier New', Courier, monospace;
+
+:root {
+  // base font provided by JavaScript code in primary Layout
+  --base-font-size: 16px;
+
+  // Color variables
+  --clr-background-1: #{$clr-background-1};
+  --clr-background-2: #{$clr-background-2};
+  --clr-brand-1: #{$clr-brand-1};
+  --clr-brand-2: #{$clr-brand-2};
+  --clr-grey: #{$clr-grey};
+  --clr-white: #{$clr-white};
+  --clr-html: #{$clr-html};
+  --clr-css: #{$clr-css};
+  --clr-js: #{$clr-js};
+  --clr-react: #{$clr-react};
+
+  // Font weight variables
+  --fw-light: #{$fw-light};
+  --fw-regular: #{$fw-regular};
+  --fw-medium: #{$fw-medium};
+
+  // Font family variables
+  --ff-ubuntu: #{$ff-ubuntu};
+  --ff-ibm: #{$ff-ibm};
+}
+
+@function rem($px) {
+  @return calc(#{$px}px / var(--base-font-size) * 1rem);
+}
+
+// Ubuntu Font Mixins
+@mixin bg-text-u {
+  font-family: var(--ff-ubuntu);
+  font-weight: var(--fw-regular);
+  font-size: rem(117);
+  line-height: rem(134);
+}
+
+@mixin h1-u {
+  font-family: var(--ff-ubuntu);
+  font-weight: var(--fw-regular);
+  font-size: rem(64);
+  line-height: rem(72);
+}
+
+@mixin h2-u {
+  font-family: var(--ff-ubuntu);
+  font-weight: var(--fw-regular);
+  font-size: rem(32);
+  line-height: rem(36);
+}
+
+@mixin button-u {
+  font-family: var(--ff-ubuntu);
+  font-weight: var(--fw-regular);
+  font-size: rem(20);
+  line-height: rem(24);
+}
+
+@mixin article-u {
+  font-family: var(--ff-ubuntu);
+  font-weight: var(--fw-light);
+  font-size: rem(16);
+  line-height: rem(32);
+}
+
+@mixin para-u {
+  font-family: var(--ff-ubuntu);
+  font-weight: var(--fw-light);
+  font-size: rem(16);
+  line-height: rem(18);
+}
+
+@mixin label-u-m {
+  font-family: var(--ff-ubuntu);
+  font-weight: var(--fw-medium);
+  font-size: rem(14);
+  line-height: rem(16);
+}
+
+@mixin label-u-l {
+  font-family: var(--ff-ubuntu);
+  font-weight: var(--fw-light);
+  font-size: function.rem(14);
+  line-height: function.rem(16);
+}
+
+// IBM Plex Mono font mixins
+@mixin number-m {
+  font-family: var(--ff-ibm);
+  font-weight: var(--fw-medium);
+  font-size: rem(48);
+  line-height: rem(62);
+}
+
+@mixin h2-m {
+  font-family: var(--ff-ibm);
+  font-weight: var(--fw-medium);
+  font-size: rem(32);
+  line-height: rem(42);
+}
+
+@mixin logo-m {
+  font-family: var(--ff-ibm);
+  font-weight: var(--fw-medium);
+  font-size: function.rem(32);
+  line-height: function.rem(42);
+}
+
+@mixin menu-m {
+  font-family: var(--ff-ibm);
+  font-weight: var(--fw-regular);
+  font-size: rem(24);
+  line-height: rem(32);
+}
+
+@mixin media-m {
+  font-family: var(--ff-ibm);
+  font-weight: var(--fw-regular);
+  font-size: rem(16);
+  line-height: rem(20);
+}
+
+@mixin para-m {
+  font-family: var(--ff-ibm);
+  font-weight: var(--fw-regular);
+  font-size: function.rem(16);
+  line-height: function.rem(20);
+}
+
+@mixin code-m {
+  font-family: var(--ff-ibm);
+  font-weight: var(--fw-regular);
+  font-size: rem(14);
+  line-height: rem(18);
+}
