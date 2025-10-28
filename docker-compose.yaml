@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: portfolio-prod
+    ports:
+      - '8080:80'
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    networks:
+      - portfolio-network
+
+  portfolio-dev:
+    image: node:22-alpine
+    container_name: portfolio-dev
+    working_dir: /app
+    volumes:
+      - .:/app:Z
+      - portfolio-node-modules:/app/node_modules
+    ports:
+      - '4321:4321'
+    command: sh -c "npm install -g pnpm && pnpm install && pnpm dev --host 0.0.0.0"
+    environment:
+      - NODE_ENV=development
+    networks:
+      - portfolio-network
+    stdin_open: true
+    tty: true
+
+volumes:
+  portfolio-node-modules:
+
+networks:
+  portfolio-network:
+    driver: bridge

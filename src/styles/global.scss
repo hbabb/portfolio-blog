@@ -1,0 +1,159 @@
+/* ubuntu-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  src: url('/fonts/ubuntu-v21-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* ubuntu-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/ubuntu-v21-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* ubuntu-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/ubuntu-v21-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* ibm-plex-mono-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/ibm-plex-mono-v20-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* ibm-plex-mono-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/ibm-plex-mono-v20-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* 01 Colors */
+// Primary
+$clr-background-1: #292f36;
+$clr-background-2: #1a1e23;
+$clr-brand-1: #12f7d6;
+$clr-brand-2: #98faec;
+$clr-grey: #43454d;
+$clr-white: #ffffff;
+$clr-html: #e54f26;
+$clr-css: #0c73b8;
+$clr-js: #e7a020;
+$clr-react: #28a9e0;
+
+:root {
+  --base-font-size: 16px;
+  --clr-background-1: #{$clr-background-1};
+  --clr-background-2: #{$clr-background-2};
+  --clr-brand-1: #{$clr-brand-1};
+  --clr-brand-2: #{$clr-brand-2};
+  --clr-grey: #{$clr-grey};
+  --clr-white: #{$clr-white};
+  --clr-html: #{$clr-html};
+  --clr-css: #{$clr-css};
+  --clr-js: #{$clr-js};
+  --clr-react: #{$clr-react};
+}
+
+@function rem($px) {
+  @return calc(#{$px}px / var(--base-font-size) * 1rem);
+}
+
+@mixin bg-text-u {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  font-size: function.rem(117);
+  line-height: function.rem(134);
+}
+
+@mixin h1-u {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  font-size: function.rem(64);
+  line-height: function.rem(72);
+}
+// TODO: Finish adding mixins for fonts
+/* Reset */
+/* === NEW Reset by Kevin Powell === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+p,
+li {
+  text-wrap: pretty;
+  max-width: 65ch;
+}
+
+[role='list'] {
+  list-style: none;
+  margin-block-end: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Global Styles */
+html,
+body {
+  background: var(--clr-background);
+  margin: 0;
+}
+
+p {
+  font-family: var(--ff-body);
+  @include body-1;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+  font-family: var(--ff-heading);
+}
+
+h1 {
+  font-weight: var(--fw-bold);
+  font-size: rem(50);
+  line-height: rem(50);
+  letter-spacing: rem(-0.45);
+}
+
+h2 {
+  font-weight: var(--fw-bold);
+  font-size: rem(40);
+  line-height: rem(42);
+  letter-spacing: rem(-0.36);
+}
+
+h3 {
+  font-weight: var(--fw-regular);
+  font-size: rem(32);
+  line-height: rem(36);
+  letter-spacing: rem(-0.29);
+}
