@@ -59,10 +59,7 @@ $fw-regular: 400;
 $fw-medium: 500;
 
 // Font family
-$ff-ubuntu:
-  'Ubuntu' Arial,
-  Helvetica,
-  sans-serif;
+$ff-ubuntu: 'Ubuntu', Arial, Helvetica, sans-serif;
 $ff-ibm: 'IBM Plex Mono', 'Courier New', Courier, monospace;
 
 :root {
@@ -99,50 +96,50 @@ $ff-ibm: 'IBM Plex Mono', 'Courier New', Courier, monospace;
 @mixin bg-text-u {
   font-family: var(--ff-ubuntu);
   font-weight: var(--fw-regular);
-  font-size: function.rem(117);
-  line-height: function.rem(134);
+  font-size: rem(117);
+  line-height: rem(134);
 }
 
 @mixin h1-u {
   font-family: var(--ff-ubuntu);
   font-weight: var(--fw-regular);
-  font-size: function.rem(64);
-  line-height: function.rem(72);
+  font-size: rem(64);
+  line-height: rem(72);
 }
 
 @mixin h2-u {
   font-family: var(--ff-ubuntu);
   font-weight: var(--fw-regular);
-  font-size: function.rem(32);
-  line-height: function.rem(36);
+  font-size: rem(32);
+  line-height: rem(36);
 }
 
 @mixin button-u {
   font-family: var(--ff-ubuntu);
   font-weight: var(--fw-regular);
-  font-size: function.rem(20);
-  line-height: function.rem(24);
+  font-size: rem(20);
+  line-height: rem(24);
 }
 
 @mixin article-u {
   font-family: var(--ff-ubuntu);
   font-weight: var(--fw-light);
-  font-size: function.rem(16);
-  line-height: function.rem(32);
+  font-size: rem(16);
+  line-height: rem(32);
 }
 
 @mixin para-u {
   font-family: var(--ff-ubuntu);
   font-weight: var(--fw-light);
-  font-size: function.rem(16);
-  line-height: function.rem(18);
+  font-size: rem(16);
+  line-height: rem(18);
 }
 
 @mixin label-u-m {
   font-family: var(--ff-ubuntu);
   font-weight: var(--fw-medium);
-  font-size: function.rem(14);
-  line-height: function.rem(16);
+  font-size: rem(14);
+  line-height: rem(16);
 }
 
 @mixin label-u-l {
@@ -156,15 +153,15 @@ $ff-ibm: 'IBM Plex Mono', 'Courier New', Courier, monospace;
 @mixin number-m {
   font-family: var(--ff-ibm);
   font-weight: var(--fw-medium);
-  font-size: function.rem(48);
-  line-height: function.rem(62);
+  font-size: rem(48);
+  line-height: rem(62);
 }
 
 @mixin h2-m {
   font-family: var(--ff-ibm);
   font-weight: var(--fw-medium);
-  font-size: function.rem(32);
-  line-height: function.rem(42);
+  font-size: rem(32);
+  line-height: rem(42);
 }
 
 @mixin logo-m {
@@ -177,15 +174,15 @@ $ff-ibm: 'IBM Plex Mono', 'Courier New', Courier, monospace;
 @mixin menu-m {
   font-family: var(--ff-ibm);
   font-weight: var(--fw-regular);
-  font-size: function.rem(24);
-  line-height: function.rem(32);
+  font-size: rem(24);
+  line-height: rem(32);
 }
 
 @mixin media-m {
   font-family: var(--ff-ibm);
   font-weight: var(--fw-regular);
-  font-size: function.rem(16);
-  line-height: function.rem(20);
+  font-size: rem(16);
+  line-height: rem(20);
 }
 
 @mixin para-m {
@@ -198,6 +195,6 @@ $ff-ibm: 'IBM Plex Mono', 'Courier New', Courier, monospace;
 @mixin code-m {
   font-family: var(--ff-ibm);
   font-weight: var(--fw-regular);
-  font-size: function.rem(14);
-  line-height: function.rem(18);
+  font-size: rem(14);
+  line-height: rem(18);
 }
