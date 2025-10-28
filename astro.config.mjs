@@ -11,4 +11,13 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   integrations: [react(), vue(), markdoc(), mdx(), sitemap()],
   adapter: vercel(),
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@use "src/styles/_mixins.scss" as *;`,
+        },
+      },
+    },
+  },
 });
