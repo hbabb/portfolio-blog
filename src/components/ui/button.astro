@@ -40,6 +40,16 @@ const isLink = type === 'link';
     border-radius: var(--rounded-full);
     cursor: pointer;
     text-decoration: none;
+
+    transition: all;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.94);
+    }
   }
 
   .btn--primary {
@@ -66,7 +76,10 @@ const isLink = type === 'link';
     border: 2px solid var(--clr-brand-1);
 
     &:hover {
-      border: 3px solid var(--clr-brand-2);
+      background: var(--clr-brand-2);
+      color: var(--clr-background-1);
+      // border: none;
+      transform: scale(1.1);
     }
   }
 </style>
