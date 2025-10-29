@@ -1,5 +1,5 @@
 {
-  "cSpell.words": ["commitlint", "commitlintrc", "Ibarra", "markdoc", "vercel"],
+  "cSpell.words": ["commitlint", "commitlintrc", "Ibarra", "lucide", "markdoc", "vercel"],
   // Disable the default formatter, use eslint instead
   "prettier.enable": false,
   "editor.formatOnSave": false,
